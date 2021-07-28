@@ -11,8 +11,11 @@ const store = createStore(reducer);
 function App() {
   const [ count, setCount ] = useState(store.getState().count);
 
-  store.subscribe(() => setCount(store.getState().count));
-  
+  // this updates the local state count (state in App not redux)
+  // whenever an event is dispatched
+  store.subscribe(() => setCount(store.getState().count)); 
+
+  // clicking + or - fires an event
   return (
     <div className="App">
       <div className="block" onClick={() => (
