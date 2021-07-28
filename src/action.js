@@ -1,4 +1,4 @@
-import INCREASE from './actionType';
+import { INCREASE } from './actionType';
 
 export default function increase(diff) {
     return {
