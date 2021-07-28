@@ -11,6 +11,8 @@ const store = createStore(reducer);
 function App() {
   const [ count, setCount ] = useState(store.getState().count);
 
+  store.subscribe(() => setCount(store.getState().count));
+  
   return (
     <div className="App">
       <div className="block" onClick={() => (
